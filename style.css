@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: -10;
+    background-image: repeating-linear-gradient(
+        112.5deg,
+        hsla(19, 0%, 93%, 0.2) 0px,
+        hsla(19, 0%, 93%, 0.2) 0px,
+        transparent 0px,
+        transparent 1px,
+        hsla(19, 0%, 93%, 0.2) 1px,
+        hsla(19, 0%, 93%, 0.2) 4px,
+        transparent 4px,
+        transparent 5px,
+        hsla(19, 0%, 93%, 0.2) 5px,
+        hsla(19, 0%, 93%, 0.2) 8px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        hsla(19, 0%, 93%, 0.2) 0px,
+        hsla(19, 0%, 93%, 0.2) 0px,
+        transparent 0px,
+        transparent 1px,
+        hsla(19, 0%, 93%, 0.2) 1px,
+        hsla(19, 0%, 93%, 0.2) 4px,
+        transparent 4px,
+        transparent 5px,
+        hsla(19, 0%, 93%, 0.2) 5px,
+        hsla(19, 0%, 93%, 0.2) 8px
+      ),
+      linear-gradient(135deg, rgb(238, 238, 238), rgb(121, 121, 121));
+  }
+  .title {
+    /* margin-top: -100px; */
+    text-align: center;
+    color: rgb(184, 255, 255);
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
+    text-wrap: wrap;
+    z-index: 10;
+  }
+  .img-box {
+    border-radius: 15px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -5px -5px 15px #606060, 5px 5px 10px #848383;
+    width: 280px;
+    height: 280px;
+    z-index: 1;
+  }
+  .img-box::before {
+    position: absolute;
+    z-index: 3;
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  .img-box::after {
+    transition: 1s;
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    left: 0;
+    height: 100%;
+    background-color: red;
+    border-radius: 10px;
+  }
+  .img-box:hover::after {
+    transform: rotate(15deg);
+    box-shadow: -5px -5px 15px #606060, 5px 5px 10px #606060;
+  }
+  .img-box:hover::before {
+    transform: rotate(30deg);
+    box-shadow: -5px -5px 15px #606060, 5px 5px 10px #606060;
+  }
+  
+  img {
+    position: relative;
+    z-index: 4;
+    border-radius: 10px;
+    transition: 0.5s;
+    box-shadow: 5px 5px 15px rgb(39, 39, 39);
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    overflow: hidden;
+  }
+  
+  img:hover {
+    transform: scale(0.9);
+  }
+  @media only screen and (max-width: 480px) { /*mobile device*/
+    .img-box {
+      width: 80%;
+      height: 380px;
+    }
+  }
+  @media screen and (min-width: 481px) and (max-width: 820px) {/*tablet device*/
+    .img-box{
+      width: 380px;
+      height: 400px;
+    }
+  }
+  @media screen and (min-width: 1025px)  {/*desktop*/
+    .img-box{
+      width: 400px;
+      height: 380px;
+    }
+  }
